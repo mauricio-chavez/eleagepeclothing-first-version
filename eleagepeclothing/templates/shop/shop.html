@@ -1,0 +1,41 @@
+{% extends base %}
+
+{% block fonts %} {% endblock %}
+
+{% block title %}Tienda{% endblock %}
+{% block shop-active %}active{% endblock %}
+
+{% block content %}
+<!--HEADER-->
+  <p class="caveat-brush text-center mt-6rem animated tada"
+     style="font-size: 2.8rem">
+     eleagepeclothing <span class="pacifico" style="font-size: 1.2rem">shop</span>
+  </p>
+
+<!--ARTICULOS-->
+<div class="container-fluid mt-5 mx-auto animated fadeIn">
+
+  {% if item_list %}
+    {% for tuple in item_list%}
+      <div class="row no-gutters">
+      {% for item in tuple%}
+        <div class="col mb-5">
+          <div class="card mx-auto hvr-bob" style="width: 15rem;">
+            <img class="card-img-top" src="{{item.image.url}}" alt="{{item.name}}">
+            <div class="card-body background-blue-shop-cards">
+              <h5 class="card-title caveat-brush-white text-center">
+                                    {{ item.name }}
+                                </h5>
+              <p class="card-text text-center">${{ item.price }} MXN</p>
+              <a href="{% url 'detail' item.id %}" class="btn btn-primary float-right">Añadir al carrito</a>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+      </div>
+    {% endfor %}
+  {% else %}
+    <p>No hay ropa :(</p>
+  {% endif %}
+</div>
+{% endblock %}

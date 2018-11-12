@@ -1,0 +1,71 @@
+{% extends base %}
+
+{% load static %}
+
+{% block meta %}
+<script src="https://www.paypalobjects.com/api/checkout.js"></script>
+{% endblock %}
+
+{% block title %}{{item.name}}{% endblock %}
+{% block shop-active %}active{% endblock %}
+
+{% block content %}
+<main role="main" class="container mt-5 pt-5 pt-sm-0 mb-5 mx-auto">
+    <div class="row mt-lg-5 pt-lg-5">
+       <div class="col d-none d-lg-flex d-xl-flex">
+        <img src="{{item.image.url}}" alt="{{item.name}}" width="500rem" height="500rem">
+      </div>
+      <div class="col text-center">
+        <h3 class="caveat-brush mt-lg-5" style="font-size: 3.5rem">{{item.name}}</h3>
+        <img class="d-lg-none my-4 mx-auto" src="{{item.image.url}}" alt="{{item.name}}" width="300rem" height="300rem">
+        <p style="font-size: 1.2rem">{{item.short_description}}</p>
+        <p class="text-info" style="font-size: 2rem">$ {{item.price}} MXN</p>
+        <div id="paypal-button-container"></div>
+      </div>
+    </div>
+</main>
+
+{% endblock %}
+
+{% block scripts %}
+
+<script>
+  paypal.Button.render({
+    // Configure environment
+    env: 'sandbox',
+    client: {
+      sandbox:    'AXaEC2Vjz9XI-Fld1WGuOxygBRHzsCpJbZBdMmYIduTzrGHvratgeSOqGIq6nE4vK1VCwvmNy0enhViJ',
+        production: 'AYC_QbdAFYRkH4cwrsK-Ph_xpawqULCnt5SCDqQmm-WmJx-IxwDzexQyYxjdJlLl9pzmZNL9kmtRLwXi'
+    },
+    // Customize button (optional)
+    locale: 'es_MX',
+    style: {
+      label: 'buynow',
+      fundingicons: true, // optional
+      branding: true, // optional
+      size: 'large',
+      color: 'gold',
+      shape: 'pill',
+    },
+    // Set up a payment
+    payment: function(data, actions) {
+      return actions.payment.create({
+        transactions: [{
+          amount: {
+            total: '{{item.price}}',
+            currency: 'USD',
+          }
+        }]
+      });
+    },
+    // Execute the payment
+    onAuthorize: function(data, actions) {
+      return actions.payment.execute().then(function() {
+        // Show a confirmation message to the buyer
+        window.alert('Thank you for your purchase!');
+      });
+    }
+  }, '#paypal-button-container');
+
+</script>
+{% endblock %}

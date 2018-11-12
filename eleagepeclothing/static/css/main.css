@@ -1,0 +1,162 @@
+body{
+	font-family: 'Nunito', sans-serif;
+	/*font-family: 'Catamaran', sans-serif;*/
+	/*font-family: 'Roboto', sans-serif;*/
+}
+
+/*
+img:hover{
+ width:150px;
+ height:150px;
+}
+
+*/
+
+.imagen-mitad{
+	width: 75%;
+	height: 75%;
+}
+
+
+.catamaran{
+	font-family: 'Catamaran', sans-serif;
+}
+
+.lato{
+	font-family: 'Lato', sans-serif;
+}
+
+.satisfy{
+	font-family: 'Satisfy', cursive;
+}
+
+.black{
+	color: black;
+}
+
+.blue-1{
+	color: #192C47;
+}
+
+.blue-2{
+	color: #0093C6 ;
+}
+
+.blue-3{
+	color: #54BAD8 ;
+}
+
+.white{
+	color: #FFFFFF ;
+}
+
+.yellow{
+	color: #F7DC1B ;
+}
+
+.blue-1-background{
+	background-color: #192C47;
+}
+
+.smaller-font{
+	font-size: 50%;
+}
+
+.mt-6em{
+	margin-top: 6em;
+}
+
+.mt-6rem{
+	margin-top: 6rem;
+}
+
+.pt-6rem{
+	padding-top: 6rem;
+}
+
+.align-center{
+	align-content: center;
+}
+
+.padding-sides-10{
+	padding-left: 10%;
+	padding-right 10%;
+}
+
+.black-font{
+	color: black;
+}
+
+.margin-top-3{
+	margin-top: 5rem;
+}
+
+.pacifico{
+	font-family: 'Pacifico', cursive;
+}
+
+.caveat-brush{
+	font-family: 'Caveat Brush', cursive;
+}
+
+.pacifico-grande{
+	font-family: 'Pacifico', cursive;
+	font-size: 8vw;
+}
+
+
+.caveat-brush-white{
+	font-family: 'Caveat Brush', cursive;
+	color: white;
+	font-size: 1.8rem;
+}
+
+.pacifico-white{
+	font-family: 'Pacifico', cursive;
+	color: white;
+}
+
+.background-blue-shop-cards{
+	background-color: #F7DC1B;
+}
+
+.centrar-texto{
+	text-align: center;
+}
+
+.mover-abajo{
+	margin-top: 10px;
+}
+
+.espacio-arriba-abajo{
+	margin-top: 2em;
+	margin-bottom: 2em;
+}
+
+ /* Grid menu */
+
+     .ch-grid {
+	margin: 20px 0 0 0;
+	padding: 0;
+	list-style: none;
+	display: block;
+	text-align: center;
+	width: 100%;
+}
+
+.ch-grid:after,
+.ch-item:before {
+	content: '';
+    display: table;
+}
+
+.ch-grid:after {
+	clear: both;
+}
+
+.ch-grid li {
+	width: 220px;
+	height: 220px;
+	display: inline-block;
+	margin: 20px;
+}
