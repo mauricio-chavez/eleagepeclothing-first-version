@@ -11,7 +11,7 @@ urlpatterns = [
     ),
     path(
         route='logout/',
-        view=views.logout,
+        view=views.LogoutView.as_view(),
         name='logout'
     ),
     path(
