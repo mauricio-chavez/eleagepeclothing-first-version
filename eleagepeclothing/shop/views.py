@@ -12,31 +12,13 @@ def shop(request):
         item_tuple = tuple(items[count:count+3])
         count += 3
         item_list.append(item_tuple)
-    if request.user.is_authenticated:
-        user = ShopUser.objects.get(user=request.user)
-        username = request.user.first_name if request.user.first_name != "" else "@" + request.user.username
-        context = { 'base': 'shop/base_logged.html',
-                    'user': user,
-                    'username': username,
-                    'item_list': item_list}
-    else:
-        context = { 'base': 'shop/base.html',
-                    'item_list': item_list}
-    return render(request, 'shop/shop.html', context)
+
+    return render(request, 'shop/shop.html', {'item_list': item_list})
 
 def detail(request, id):
     item = get_object_or_404(Item,id=id)
-    if request.user.is_authenticated:
-        user = ShopUser.objects.get(user=request.user)
-        username = request.user.first_name if request.user.first_name != "" else request.user.username
-        context = { 'base': 'shop/base_logged.html',
-                    'user': user,
-                    'username': username,
-                    'item' : item }
-    else:
-        context = { 'base': 'shop/base.html',
-                    'item' : item}
-    return render(request, 'shop/details.html', context)
+                    
+    return render(request, 'shop/details.html', {'item' : item})
 
 """
 @login_required(login_url='')

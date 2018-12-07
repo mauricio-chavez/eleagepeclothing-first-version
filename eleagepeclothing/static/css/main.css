@@ -17,6 +17,10 @@ img:hover{
 	height: 75%;
 }
 
+.bg-gr-blue{
+	background-image: linear-gradient(to right, #2575fc , #6A11CB);
+}
+
 
 .catamaran{
 	font-family: 'Catamaran', sans-serif;
@@ -70,6 +74,10 @@ img:hover{
 	margin-top: 6rem;
 }
 
+.mt-6{
+	margin-bottom: 6rem;
+}
+
 .pt-6rem{
 	padding-top: 6rem;
 }
@@ -80,7 +88,7 @@ img:hover{
 
 .padding-sides-10{
 	padding-left: 10%;
-	padding-right 10%;
+	padding-right: 10%;
 }
 
 .black-font{
