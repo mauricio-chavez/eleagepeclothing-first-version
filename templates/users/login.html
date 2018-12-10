@@ -38,6 +38,7 @@
     <form class="form-signin" action="{% url 'login' %}" method="post">
     {% csrf_token %}
     {% if form.errors %}
+        <p>form.errors</p>
         <p class="alert alert-danger">
             Tu nombre de usuario y contraseña no coinciden. Inténtalo de nuevo.
         </p>
@@ -48,6 +49,7 @@
         <p>Inicia sesión en tu cuenta <strong class="caveat-brush">eleagepeclothing</strong> para hacer compras y seguir siendo cool, <a href="{% url 'shop' %}">o da click aquí para regresar</a></p>
       </div>
 
+      <input type="hidden" name="next" value="{{ request.GET.next }}">
       <input type="text" name="username" class="form-control" placeholder="Nombre de usuario" required autofocus>
       <input type="password" name="password" class="form-control" placeholder="Contraseña" required>
 

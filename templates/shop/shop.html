@@ -25,12 +25,12 @@
                 <div class="col mb-5">
                     <div class="card mx-auto hvr-bob" style="width: 15rem;">
                         <img class="card-img-top" src="{{item.image.url}}" alt="{{item.name}}">
-                        <div class="card-body background-blue-shop-cards">
+                        <div class="card-body bg-gr-blue">
                             <h5 class="card-title caveat-brush-white text-center">
                                 {{ item.name }}
                             </h5>
-                            <p class="card-text text-center">${{ item.price }} MXN</p>
-                            <a href="{% url 'detail' item.id %}" class="btn btn-primary float-right">Añadir al carrito</a>
+                            <p class="card-text text-center text-light">${{ item.price }} MXN</p>
+                            <a href="{% url 'detail' item.id %}" class="btn btn-primary float-right">Ver más</a>
                         </div>
                     </div>
                 </div>

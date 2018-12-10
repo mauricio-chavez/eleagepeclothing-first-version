@@ -54,6 +54,7 @@
         <p>Regístrate en <strong class="caveat-brush">eleagepeclothing</strong> para comenzar a hacer compras <a href="{% url 'shop' %}">o da click aquí para regresar</a></p>
       </div>
 
+      <input type="hidden" name="next" value="{{ request.GET.next }}">
       <input type="text" name="first_name" class="form-control" placeholder="Nombre"
              minlength="2" id="id_first_name" maxlength="50" required autofocus>
       <input type="text" name="last_name" class="form-control" placeholder="Apellido(s)" 

@@ -11,13 +11,12 @@ from django.views.generic import FormView
 
 from users.forms import SignupForm
 
-
-class LogoutView(LoginRequiredMixin, auth_views.LogoutView):
-    pass
-
 def user_detail(request):
 
 	return render(request, 'shop/details.html', context)
+
+class LogoutView(LoginRequiredMixin, auth_views.LogoutView):
+    pass
 
 class SignupView(FormView):
 

@@ -25,7 +25,7 @@ SECRET_KEY = 's7_jjjvzi0hnve&_j)8k4wx(kd+s(-0=5sjjo62t*vmysup=l5'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://eleagepeclothing.azurewebsites.net']
+ALLOWED_HOSTS = ['https://eleagepeclothing.azurewebsites.net','*']
 
 
 # Application definition
@@ -41,11 +41,15 @@ DJANGO_APPS = [
 
 LOCAL_APPS = [
     'home',
-    'shop',
     'users',
+    'shop',
 ]
 
-INSTALLED_APPS = DJANGO_APPS + LOCAL_APPS
+THIRD_PARTY_APPS = [
+    
+]
+
+INSTALLED_APPS = DJANGO_APPS + LOCAL_APPS + THIRD_PARTY_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -68,6 +72,7 @@ TEMPLATES = [
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
+                'shop.context_processor.item_count',
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
@@ -138,5 +143,7 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,"media")
 
 LOGIN_URL = '/users/login/'
-LOGIN_REDIRECT_URL = '/'
+
+#LOGIN_REDIRECT_URL = '/'
+
 LOGOUT_REDIRECT_URL = '/'
