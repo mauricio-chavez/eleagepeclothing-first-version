@@ -47,10 +47,13 @@ class ShoppingCart(models.Model):
         self.save()
     
     def count_items(self):
+        """
         items = 0
         for _ in self.items.all():
             items += 1
         return items
+        """
+        return len(self.items.all())
 
     def __str__(self):
         return "Shopping cart -- $" + str(self.prices_sum)
